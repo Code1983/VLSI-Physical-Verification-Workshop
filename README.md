@@ -43,6 +43,17 @@ Skywater process is described as a standard 130nm/180 nm process.FET transistor 
  
 ### Rules
 ### Devices
+* Thin oxide
+* Thick oxide
+* Mim Caps
+* Resistors
+* Bipolar devices - vertical bipolar making use of diffussion regions and wells has high enough beta. It can have proper NPN transistor.
+* Resistors
+ * Polysilion - P+ and p- dope
+ * diffussion resisitor
+ * pwell is highest resistance resistor
+ * high precision resistors are discrete sizes
+* devices with a restricted number of approved layout. GDS is provided for these throughly tested devices.
 ### Libraries
 ### Digital Standard Cells
 ### I/O Cells
