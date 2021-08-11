@@ -22,8 +22,21 @@
 ### Skywater PDK
 Skywater process is described as a standard 130nm/180 nm process.FET transistor 150 nm. specifically designed memory layout use 130nm devices.
 ### Magic
+Some Magic commands
+* magic -noconsole - This would bring the tcl console on command line
+* magic -dnull -noconsole - This would bring up Magic without GUI. This is the way Magic should be run from script.
+ * magic -dnull -noconsole test.tcl   (test.tcl has only one line with text "quit")
+* magic -d XR (invokes cairo graphics package)
+* magic -d OGL (uses openGL graphics package)
+* Typing semicolon on GUI will automatically redirect the commands to tcl command window.
+* import spice - File menu -> import spice
 ### xschem
+* xschem --tcl test.tcl -q (This will throw an error if previous file is used since "quit" is not a tcl command)
 ### netgen
+* netgen -noconsole - This has same behaviour as for for magic i.e console on commandline
+* netgen -batch source test.tcl (test.tcl has only one line with text "quit")
+### ngspice
+* ngspice -b (to run ngspice in batch mode)
 
 ## Building Blocks
 
@@ -59,7 +72,14 @@ Skywater process is described as a standard 130nm/180 nm process.FET transistor 
 ### I/O Cells
 
 ## Project set-up best practices
-
+### Folder structure
+Project_root  
+|--xschem  
+|--mag  
+|--netgen  
+### Xschem
+* It is preferebale to keep the circuit part that will be turned into layout self-contained. i.e no components that would not be part of layout like voltage or current sources. Ideally, schematic to be laid out is to appear as a symbol to test bench.
+* Not to use any specific power supply pins.
 # Day 2 - Introduction to DRC and LVS
 
 ## Basic of Magic
