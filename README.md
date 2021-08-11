@@ -20,6 +20,7 @@
 
 ### Open PDKs
 ### Skywater PDK
+Skywater process is described as a standard 130nm/180 nm process.FET transistor 150 nm. specifically designed memory layout use 130nm devices.
 ### Magic
 ### xschem
 ### netgen
@@ -27,6 +28,12 @@
 ## Building Blocks
 
 ### Layers
+5 layers of Aluminium metal plus a layer of Tinanium Nitride (Local interconnect)
+Local interconnect (LI) is used to connect neighbouring devices. Skywater standard cell uses it for power and ground rails.
+Contact to polysilicon requiring a Nitride a polycut layer.
+Metal layers are in progressive thickness bottom up.
+For Digital flows, tools reserve Metal5 for routing.
+Metal layers ard vias are called back-end layers. Everything below is called front-end layers. They are different as different precision required for masks and different fabrication process. They share the steps of oxide(insulation layer) growth but front end is mainly diffusion and ion implantation while back-end is metal deposition by sputtering.
 ### Rules
 ### Devices
 ### Libraries
