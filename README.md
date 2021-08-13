@@ -182,11 +182,18 @@ GDS input styles
  * `cif istyle sky130()`
  * `cif istyle sky130(vendor)`
 * style rdlimport
+* all available styles can be listed as `cif listall istyle`
+* current style can be shown by `cif list istyle`
 GDS output styles
 * style gdsii
 * stye drc - for drc only
 * style density - used by scripts for fill density
-* style wafflefill - used by scripts
+* style wafflefill - used by scripts  
+Port Commands
+* `port index` - shows the index of the port only if single port is selected
+* better way would be to use `port first` , `port 1 name` , `port 1 class` to query about each port. 
+* GDS does not store metadata like port class etc. So, we use .lef file format. `lef read` can be used to read the lef file.
+* However this does not show port order. This can be does by a tcl script `readspice /usr/share/pdk/sky130A/libs.ref/sky130_fd_sc_hd/spice/sky130_fd_sc_hd.spice`
 ### DRC Rules in Magic
 * Interactive DRC
 * DRC styles
