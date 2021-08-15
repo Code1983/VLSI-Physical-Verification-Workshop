@@ -215,45 +215,50 @@ Device types
 Hierrarchical extraction
 DRC errors uncovered by extraction
 ## Netgen
-LVS setup
-Device description
+It can compare and indicate if they do not match
+* layout vs schematic 
+* layout vs verilog
 ## Black boxing
+If we are using verilog, it uses logic gates. From the perspecive of LVS, all the logic gates are blackboxed i.e LVS will not run unto the transistor level.
+If we want to run the LVS down to transistor level, we would have to splice the subcell onto the verilog netlist.
 ## Verification by XOR
+Comparison by XORing two GDS files to identify if there are any changes present.
 ## ECO
 
 
 # Day 3 - Front-end and back-end DRC
 ## Rules
-Back-end (metal layer) rules
-Width
-Spacing Notch
-Wide-Spacing
-Minimum Area
-Via overlaps
-Minimum hole
-Slot rules
-Via generation rules
-Local interconnect
-Front-end rules
-Transistor rules
-Implants, ID layers, Boundary layers
-Wells, same-net rules
-Deep N-well
-High Voltage rules
-Resistors
-Capacitors
-Diodes
-Fixed-layout devices
-Miscellaneous rules
-Off-grid errors
-Restricted angles
-Latchup rules
-Antenna rules
-Stress rules
-Density rules
-Double vias
+Following are some of important back-end (metal layer) rules to review in a PDK.
+* Width
+* Spacing Notch
+* Wide-Spacing
+* Minimum Area
+* Via overlaps
+* Minimum hole
+* Slot rules
+* Via generation rules
+* Local interconnect
+* Front-end rules
+* Transistor rules
+* Implants, ID layers, Boundary layers
+* Wells, same-net rules
+* Deep N-well
+* High Voltage rules
+* Resistors
+* Capacitors
+* Diodes
+* Fixed-layout devices
+* Miscellaneous rules
+* Off-grid errors
+* Restricted angles
+* Latchup rules
+* Antenna rules
+* Stress rules
+* Density rules
+* Double vias
 ## Fill generation algorithm
-Fill blocking
+The metal layer should have certain percentage of area fill so that upper layers can be smooth.
+This is achieved using python script SKY130 process.
 ## DRC in Magic
 DRC styles
 Dumping and viewing DRC results
@@ -290,8 +295,9 @@ Fixing DRC errors
 
 # Day 5 - LVS
 ## Netlists
-netlits from schematic
-metlist from layout
+Netlists are extracted from following
+* netlits from schematic
+* netlist from layout
 
 ## Netgen
 Pre-match analysis
